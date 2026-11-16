@@ -137,7 +137,7 @@ Copy `.env.example` to your deployment environment. Set these values using the p
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
 
-Set both `VITE_SITE_URL` and `SITE_URL` to the real public portfolio origin (for example, your actual HTTPS domain, with no trailing slash). Never put a Supabase secret or service-role key in a `VITE_*` variable.
+The current production origin is `https://work.adityaratre.workers.dev`. Set both `VITE_SITE_URL` and `SITE_URL` to that origin (or your final custom domain, with no trailing slash) so canonical metadata and the sitemap point to the public site. Never put a Supabase secret or service-role key in a `VITE_*` variable.
 
 Redeploy the site after setting environment variables. Then open `/_private-console-8a4f2d`, sign in with the allowlisted account, edit content and select **Save changes**.
 
