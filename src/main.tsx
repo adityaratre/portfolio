@@ -2,7 +2,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MotionConfig } from 'framer-motion';
 import App from './App';
-import AdminApp from './AdminApp';
 import { ADMIN_PATH, loadPublicPortfolioContent } from './lib/portfolioApi';
 import { applyPortfolioSeo } from './lib/siteSeo';
 import { setPortfolioData } from './data/portfolio';
@@ -14,6 +13,7 @@ async function start() {
   const root = createRoot(mount);
 
   if (window.location.pathname.replace(/\/$/, '') === ADMIN_PATH) {
+    const { default: AdminApp } = await import('./AdminApp');
     root.render(<StrictMode><AdminApp /></StrictMode>);
     return;
   }
