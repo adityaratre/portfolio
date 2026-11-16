@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { getPortfolioData, setPortfolioData } from './data/portfolio';
 import {
   backendConfigured,
