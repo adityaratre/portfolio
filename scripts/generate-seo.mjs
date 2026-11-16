@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node
 import { resolve } from 'node:path';
 
 const dist = resolve('dist');
-const raw = process.env.SITE_URL || process.env.VITE_SITE_URL || '';
+const raw = process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://work.adityaratre.workers.dev';
 const adminPath = '/_private-console-8a4f2d';
 
 if (!existsSync(dist)) {
