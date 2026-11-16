@@ -7,6 +7,7 @@ const env = import.meta.env as ImportMetaEnv & {
 const API_URL = (env.VITE_SUPABASE_URL ?? '').replace(/\/+$/, '');
 const API_KEY = env.VITE_SUPABASE_PUBLISHABLE_KEY ?? env.VITE_SUPABASE_ANON_KEY ?? '';
 export const ADMIN_PATH = '/_private-console-8a4f2d';
+export const ADMIN_HASH_ROUTE = '#/_private-console-8a4f2d';
 
 const SESSION_KEY = 'aditya-portfolio-admin-session';
 
