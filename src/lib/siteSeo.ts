@@ -34,6 +34,7 @@ export function applyPortfolioSeo() {
   meta('meta[name="robots"]', 'name', 'robots', seo.robots || 'index,follow');
   meta('meta[name="keywords"]', 'name', 'keywords', (seo.keywords || []).join(', '));
   meta('meta[property="og:type"]', 'property', 'og:type', 'profile');
+  if (canonical) meta('meta[property="og:url"]', 'property', 'og:url', canonical);
   meta('meta[property="og:title"]', 'property', 'og:title', pageTitle);
   meta('meta[property="og:description"]', 'property', 'og:description', description);
   meta('meta[property="og:image"]', 'property', 'og:image', image);
