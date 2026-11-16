@@ -235,6 +235,7 @@ export default function AdminApp() {
   }, []);
 
   const selected = NAV_ITEMS.find((item) => item.id === tab)!;
+  const editableFields = 'fields' in selected ? selected.fields : [];
   const sectionCount = useMemo(() => Object.values(draft.siteSettings?.sectionVisibility ?? {}).filter(Boolean).length, [draft.siteSettings]);
 
   function updateField(field: string, next: JsonValue) {
@@ -357,7 +358,7 @@ export default function AdminApp() {
                   </p>
                 </div>
                 <div className="space-y-4">
-                  {selected.fields?.map((field) => (
+                  {editableFields.map((field) => (
                     <JsonField
                       key={field}
                       name={field}
