@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from 'react';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
-import { viewerProfiles, type ProfileId, type Project, type SectionId } from './data/portfolio';
+import { viewerProfiles, siteSettings, type ProfileId, type Project, type SectionId } from './data/portfolio';
 import { SmoothScrollProvider, useSmoothScroll } from './hooks/smoothScroll';
 import CustomCursor from './components/CustomCursor';
 import OpeningSequence from './components/OpeningSequence';
@@ -48,7 +48,7 @@ export default function App() {
 
 function Series() {
   const stored = readStoredProfile();
-  const [stage, setStage] = useState<Stage>(stored ? 'home' : 'opening');
+  const [stage, setStage] = useState<Stage>(stored ? 'home' : siteSettings.showOpeningSequence ? 'opening' : 'profiles');
   const [profileId, setProfileId] = useState<ProfileId>(stored ?? 'aditya');
   const [playing, setPlaying] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
@@ -56,7 +56,7 @@ function Series() {
   const [toast, setToast] = useState<string | null>(null);
   const { scrollTo, lock, unlock } = useSmoothScroll();
 
-  const order = viewerProfiles.find((p) => p.id === profileId)!.order;
+  const order = viewerProfiles.find((p) => p.id === profileId)!.order.filter((id) => siteSettings.sectionVisibility[id] !== false);
 
   useEffect(() => {
     if (stage === 'home') return;
@@ -118,8 +118,8 @@ function Series() {
   return (
     <LayoutGroup>
       <div className="grain" aria-hidden />
-      <CustomCursor />
-      <AudioExperience />
+      {siteSettings.showCursor && <CustomCursor />}
+      {siteSettings.enableAudio && <AudioExperience />}
 
       <AnimatePresence>
         {stage === 'opening' && <OpeningSequence key="opening" onDone={() => { setStage('profiles'); }} />}

@@ -5,7 +5,7 @@
 
 export type Palette = { from: string; via: string; to: string; accent: string };
 
-export const profile = {
+export let profile = {
   fullName: 'Aditya Kumar Ratre',
   displayName: 'Aditya Kumar Ratre',
   firstName: 'ADITYA',
@@ -34,7 +34,7 @@ export const profile = {
   interests: ['AI & Digital Products', 'Digital Marketing', 'Entrepreneurship', 'Music & Creative Technology'],
 };
 
-export const education = [
+export let education = [
   {
     school: 'D.P. Vipra College',
     place: 'Bilaspur, Chhattisgarh',
@@ -58,7 +58,7 @@ export const education = [
   },
 ];
 
-export const experience = [
+export let experience = [
   {
     company: 'NexaGrind AI',
     role: 'Founder & Developer',
@@ -164,7 +164,7 @@ const ocean: Palette = { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent:
 const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' };
 const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
 
-export const projects: Project[] = [
+export let projects: Project[] = [
   {
     id: 'nexagrind-ai',
     title: 'NexaGrind AI',
@@ -316,7 +316,7 @@ export const projects: Project[] = [
 ];
 
 export type Achievement = { id: string; title: string; org: string; detail: string; laurel: string; link?: string };
-export const achievements: Achievement[] = [
+export let achievements: Achievement[] = [
   { id: 'nexagrind-visits', title: '500K+ Visits', org: 'NexaGrind AI', detail: 'Reported 500K+ visits during the platform testing phase.', laurel: 'Product Milestone' },
   { id: 'seema-users', title: '1M+ Users', org: 'SEEMA Chat Bot', detail: 'Reached 1M+ users according to project analytics.', laurel: 'Scale Milestone' },
   { id: 'certifications', title: '17 Credentials', org: 'Google Skillshop • HubSpot • Zielhoch', detail: 'Completed 15 Google Skillshop credentials plus digital marketing and marketing/finance certificates.', laurel: 'Learning & Growth' },
@@ -329,7 +329,7 @@ export const achievements: Achievement[] = [
 ];
 
 export type Certification = { issuer: string; name: string; link: string };
-export const certifications: Certification[] = [
+export let certifications: Certification[] = [
   { issuer: 'Google Skillshop', name: 'AI-Powered Performance Ads Certification', link: 'https://skillshop.credential.net/d750f606-2f08-4f2f-95a8-16ba69bd7e6f' },
   { issuer: 'Google Skillshop', name: 'Google Ads Apps Certification', link: 'https://skillshop.credential.net/0a0bd5fa-42fa-41ab-8293-17f6e530f767' },
   { issuer: 'Google Skillshop', name: 'Google Ads Creative Certification', link: 'https://skillshop.credential.net/90b2f177-61d1-46ed-b060-71cf42853a89' },
@@ -351,7 +351,7 @@ export const certifications: Certification[] = [
 
 export type Skill = { name: string; mono: string; note?: string };
 export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
-export const skillCategories: SkillCategory[] = [
+export let skillCategories: SkillCategory[] = [
   { id: 'core', title: 'Core Skills', subtitle: 'What I build and work with', skills: [
     { name: 'Digital Marketing', mono: 'DM', note: 'Core' }, { name: 'Web Development', mono: 'WD' }, { name: 'AI Tools', mono: 'AI' }, { name: 'Product Development', mono: 'PD' }, { name: 'SEO', mono: 'SE' }, { name: 'Content Strategy', mono: 'CS' },
   ] },
@@ -372,7 +372,7 @@ export const skillCategories: SkillCategory[] = [
   ] },
 ];
 
-export const skillEvidence: Record<string, string[]> = {
+export let skillEvidence: Record<string, string[]> = {
   'Digital Marketing': ['Google Ads certifications', 'Content & social media projects'],
   'Web Development': ['NexaGrind AI', 'ToolsOverflow'],
   'AI Tools': ['NexaGrind AI', 'AI-assisted creative workflows'],
@@ -420,7 +420,7 @@ export const skillEvidence: Record<string, string[]> = {
 export type Episode = { code: string; title: string; description: string; tags: string[]; runtime: string; palette: Palette };
 export type Season = { number: number; title: string; period: string; synopsis: string; episodes: Episode[] };
 
-export const seasons: Season[] = [
+export let seasons: Season[] = [
   {
     number: 1,
     title: 'The Foundation',
@@ -478,7 +478,7 @@ export const seasons: Season[] = [
 ];
 
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
-export const topPicks: TopPick[] = [
+export let topPicks: TopPick[] = [
   { label: 'Flagship Product', title: 'NexaGrind AI', detail: 'Founder & Developer • 500K+ reported testing visits', palette: crimson },
   { label: 'Lead Developer', title: 'ToolsOverflow', detail: 'Multi-domain web tools ecosystem', palette: amber },
   { label: 'Scale', title: 'SEEMA', detail: '1M+ reported users', palette: ocean },
@@ -492,7 +492,7 @@ export const topPicks: TopPick[] = [
 ];
 
 export type IntroSlide = { kicker: string; title: string; lines: string[]; chips?: string[] };
-export const introSlides: IntroSlide[] = [
+export let introSlides: IntroSlide[] = [
   { kicker: 'Identity', title: 'Founder. Developer. Creator.', lines: ['Aditya Kumar Ratre', 'Bilaspur, Chhattisgarh, India'], chips: ['Founder', 'Developer', 'Digital Marketer', 'Creator'] },
   { kicker: 'Flagship', title: 'NexaGrind AI', lines: ['AI-powered digital product built and founded by Aditya', 'Reported 500K+ visits during testing'], chips: ['AI', 'Product', 'Decision Support'] },
   { kicker: 'Systems', title: 'Build real products.', lines: ['ToolsOverflow · SEEMA · HylexMC / FakePixel', 'Game development · security systems · e-commerce workflows'] },
@@ -504,14 +504,14 @@ export const introSlides: IntroSlide[] = [
 
 export type ProfileId = 'aditya' | 'recruiter' | 'developer' | 'creative';
 export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
-export const viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
+export let viewerProfiles: { id: ProfileId; name: string; blurb: string; color: string; order: SectionId[] }[] = [
   { id: 'aditya', name: 'Aditya', blurb: 'The full series, in order', color: '#e5132b', order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'] },
   { id: 'recruiter', name: 'Recruiter', blurb: 'Resume, achievements & skills first', color: '#4cc9ff', order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'] },
   { id: 'developer', name: 'Developer', blurb: 'Projects, systems & GitHub first', color: '#46e3a8', order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'] },
   { id: 'creative', name: 'Creative', blurb: 'Story, content & music first', color: '#ffb547', order: ['journey', 'picks', 'originals', 'moments', 'about', 'skills', 'story'] },
 ];
 
-export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
+export let sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
   about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & identity', palette: violet },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
   originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2025–2026`, palette: crimson },
@@ -520,3 +520,131 @@ export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: s
   moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Highlights • ${certifications.length} Certifications`, palette: crimson },
   story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
 };
+
+
+export type SeoSettings = {
+  title: string;
+  description: string;
+  keywords: string[];
+  canonicalUrl: string;
+  ogImage: string;
+  robots: string;
+  twitterHandle: string;
+};
+
+export type SiteSettings = {
+  showOpeningSequence: boolean;
+  showCursor: boolean;
+  enableAudio: boolean;
+  sectionVisibility: Record<SectionId, boolean>;
+};
+
+export let seo: SeoSettings = {
+  title: 'Aditya Kumar Ratre | Founder, Developer & BBA Student',
+  description: 'Aditya Kumar Ratre — BBA student at D.P. Vipra College, Bilaspur; founder of NexaGrind AI, developer and digital creator from Chhattisgarh, India.',
+  keywords: [
+    'Aditya Kumar Ratre',
+    'Aditya Ratre',
+    'Aditya Kumar Ratre portfolio',
+    'Aditya Ratre portfolio',
+    'D.P. Vipra College',
+    'BBA student Bilaspur',
+    'NexaGrind AI founder',
+    'developer Chhattisgarh',
+  ],
+  canonicalUrl: '',
+  ogImage: '/assets/og-image.jpg',
+  robots: 'index,follow,max-image-preview:large',
+  twitterHandle: '',
+};
+
+export let siteSettings: SiteSettings = {
+  showOpeningSequence: true,
+  showCursor: true,
+  enableAudio: true,
+  sectionVisibility: {
+    about: true,
+    journey: true,
+    originals: true,
+    picks: true,
+    skills: true,
+    moments: true,
+    story: true,
+  },
+};
+
+type PortfolioContent = {
+  profile: typeof profile;
+  education: typeof education;
+  experience: typeof experience;
+  projects: typeof projects;
+  achievements: typeof achievements;
+  certifications: typeof certifications;
+  skillCategories: typeof skillCategories;
+  skillEvidence: typeof skillEvidence;
+  seasons: typeof seasons;
+  topPicks: typeof topPicks;
+  introSlides: typeof introSlides;
+  viewerProfiles: typeof viewerProfiles;
+  sectionMeta: typeof sectionMeta;
+  seo: SeoSettings;
+  siteSettings: SiteSettings;
+};
+
+export function getPortfolioData(): PortfolioContent {
+  return JSON.parse(JSON.stringify({
+    profile,
+    education,
+    experience,
+    projects,
+    achievements,
+    certifications,
+    skillCategories,
+    skillEvidence,
+    seasons,
+    topPicks,
+    introSlides,
+    viewerProfiles,
+    sectionMeta,
+    seo,
+    siteSettings,
+  })) as PortfolioContent;
+}
+
+export function setPortfolioData(value: unknown) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return;
+  const data = value as Record<string, unknown>;
+  if (data.profile && typeof data.profile === 'object') profile = data.profile as typeof profile;
+  if (Array.isArray(data.education)) education = data.education as typeof education;
+  if (Array.isArray(data.experience)) experience = data.experience as typeof experience;
+  if (Array.isArray(data.projects)) projects = data.projects as typeof projects;
+  if (Array.isArray(data.achievements)) achievements = data.achievements as typeof achievements;
+  if (Array.isArray(data.certifications)) certifications = data.certifications as typeof certifications;
+  if (Array.isArray(data.skillCategories)) skillCategories = data.skillCategories as typeof skillCategories;
+  if (data.skillEvidence && typeof data.skillEvidence === 'object') skillEvidence = data.skillEvidence as typeof skillEvidence;
+  if (Array.isArray(data.seasons)) seasons = data.seasons as typeof seasons;
+  if (Array.isArray(data.topPicks)) topPicks = data.topPicks as typeof topPicks;
+  if (Array.isArray(data.introSlides)) introSlides = data.introSlides as typeof introSlides;
+  if (Array.isArray(data.viewerProfiles)) viewerProfiles = data.viewerProfiles as typeof viewerProfiles;
+  if (data.sectionMeta && typeof data.sectionMeta === 'object') sectionMeta = data.sectionMeta as typeof sectionMeta;
+  if (data.seo && typeof data.seo === 'object') seo = { ...seo, ...data.seo } as SeoSettings;
+  if (data.siteSettings && typeof data.siteSettings === 'object') {
+    const settings = data.siteSettings as Partial<SiteSettings>;
+    siteSettings = {
+      ...siteSettings,
+      ...settings,
+      sectionVisibility: { ...siteSettings.sectionVisibility, ...(settings.sectionVisibility ?? {}) },
+    };
+  }
+
+  sectionMeta = {
+    ...sectionMeta,
+    journey: {
+      ...sectionMeta.journey,
+      meta: `${seasons.length} Seasons • ${seasons.reduce((n, season) => n + season.episodes.length, 0)} Episodes`,
+    },
+    originals: { ...sectionMeta.originals, meta: `${projects.length} Originals • 2025–2026` },
+    skills: { ...sectionMeta.skills, meta: `${skillCategories.length} Categories` },
+    moments: { ...sectionMeta.moments, meta: `${achievements.length} Highlights • ${certifications.length} Certifications` },
+  };
+}
