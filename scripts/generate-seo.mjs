@@ -94,7 +94,7 @@ if (!siteUrl) {
       `<meta property="og:url" content="${canonical}">`,
       `<meta property="og:image" content="${image}">`,
       `<meta name="twitter:image" content="${image}">`,
-      `<script id="portfolio-static-person-schema" type="application/ld+json">${JSON.stringify(person)}</script>`,
+      `<script id="portfolio-person-schema" type="application/ld+json">${JSON.stringify(person)}</script>`,
     ].join('\n    ');
 
     if (html.includes('</head>')) {
