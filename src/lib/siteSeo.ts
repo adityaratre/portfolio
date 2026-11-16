@@ -58,15 +58,16 @@ export function applyPortfolioSeo() {
 
   const person = {
     '@type': 'Person',
+    '@id': canonical ? `${canonical}#person` : undefined,
     name: profile.fullName,
     alternateName: ['Aditya Ratre', 'Aditya Kumar Ratre'],
     description,
     jobTitle: profile.role,
     image,
-    email: profile.email ? `mailto:${profile.email}` : undefined,
+    email: profile.email || undefined,
     url: canonical || undefined,
     address: { '@type': 'PostalAddress', addressLocality: 'Bilaspur', addressRegion: 'Chhattisgarh', addressCountry: 'IN' },
-    affiliation: college ? { '@type': 'EducationalOrganization', name: college.school, address: college.place } : undefined,
+    affiliation: college ? { '@type': 'EducationalOrganization', name: college.school, address: { '@type': 'PostalAddress', addressLocality: 'Bilaspur', addressRegion: 'Chhattisgarh', addressCountry: 'IN' } } : undefined,
     sameAs,
     knowsAbout: skills,
   };
@@ -85,7 +86,7 @@ export function applyPortfolioSeo() {
         '@type': 'ProfilePage',
         name: pageTitle,
         description,
-        mainEntity: { '@type': 'Person', name: profile.fullName },
+        mainEntity: { '@id': canonical ? `${canonical}#person` : undefined, '@type': 'Person', name: profile.fullName },
         url: canonical || undefined,
       },
     ],
