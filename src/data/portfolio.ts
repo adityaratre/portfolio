@@ -540,8 +540,8 @@ export type SiteSettings = {
 };
 
 export let seo: SeoSettings = {
-  title: 'Aditya Kumar Ratre | Founder, Developer & BBA Student at D.P. Vipra College',
-  description: 'Explore the portfolio of Aditya Kumar Ratre, BBA student at D.P. Vipra College, Bilaspur, founder of NexaGrind AI, developer and digital creator from Chhattisgarh, India.',
+  title: 'Aditya Kumar Ratre | Founder, Developer & BBA Student',
+  description: 'Aditya Kumar Ratre — BBA student at D.P. Vipra College, Bilaspur; founder of NexaGrind AI, developer and digital creator from Chhattisgarh, India.',
   keywords: [
     'Aditya Kumar Ratre',
     'Aditya Ratre',
@@ -554,7 +554,7 @@ export let seo: SeoSettings = {
   ],
   canonicalUrl: '',
   ogImage: '/assets/og-image.jpg',
-  robots: 'index,follow',
+  robots: 'index,follow,max-image-preview:large',
   twitterHandle: '',
 };
 
