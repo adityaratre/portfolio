@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /_private-console-8a4f2d
