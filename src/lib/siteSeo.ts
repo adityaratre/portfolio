@@ -19,7 +19,7 @@ function absoluteUrl(value: string, base: string) {
 }
 
 export function applyPortfolioSeo() {
-  const siteUrl = (seo.canonicalUrl || env.VITE_SITE_URL || '').trim().replace(/\/$/, '');
+  const siteUrl = (seo.canonicalUrl || env.VITE_SITE_URL || 'https://work.adityaratre.workers.dev').trim().replace(/\/$/, '');
   const canonical = siteUrl ? `${siteUrl}/` : '';
   const pageTitle = seo.title?.trim() || 'Aditya Kumar Ratre | Portfolio';
   const description = seo.description?.trim() || profile.intro;
